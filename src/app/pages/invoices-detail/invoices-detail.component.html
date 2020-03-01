@@ -1,0 +1,22 @@
+<div *ngIf="invoice">
+    <div style="display: flex; align-items: center;">
+        <h1>Invoice Detail: {{invoice.invoiceNumber}}</h1>
+    </div>
+    <mat-list>
+        <app-line-item *ngFor="let item of invoice.lineItems" [lineItem]="item" [(selected)]="selectedItemId"
+            (click)="selectItem(item.id)" (delete)="deleteLineItem(item.id)" (update)="calculateBillableHours()">
+        </app-line-item>
+    </mat-list>
+    <div>Summary</div>
+    <div style="display: flex;">
+        <div *ngIf="client">Client: {{client.companyName}}</div>
+        <select style="margin-left: 2em;" *ngIf="clients" (change)="selectClient($event.target.value)">
+            <option [ngValue]="null">--Please choose an option--</option>
+            <option *ngFor="let client of clients" value="{{client.id}}">{{client.companyName}}</option>
+        </select>
+    </div>
+    <div>BillableHours: {{billableHours}}</div>
+    <div>HourlyRate: {{client.hourlyRate}}</div>
+    <div>Total: {{billableHours * client.hourlyRate}}</div>
+    <button (click)="addLineItem()">New Item</button>
+</div>

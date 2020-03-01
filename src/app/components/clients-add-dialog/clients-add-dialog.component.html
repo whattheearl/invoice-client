@@ -1,0 +1,25 @@
+<form [formGroup]="form" (ngSubmit)="onSave()">
+    <div fxLayout="column" *ngIf="form">
+        <h1>Add new client </h1>
+        <mat-form-field appearance="fill">
+            <mat-label>Company Name</mat-label>
+            <input type="text" matInput formControlName="companyName">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Contact Email</mat-label>
+            <input type="email" matInput formControlName="billingEmail">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Address</mat-label>
+            <input matInput formControlName="address">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Hourly Rate</mat-label>
+            <input type="number" matInput formControlName="hourlyRate">
+        </mat-form-field>
+        <button mat-button mat-raised-button color="primary">Save</button>
+    </div>
+</form>

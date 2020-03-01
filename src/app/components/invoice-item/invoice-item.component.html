@@ -1,0 +1,9 @@
+<a routerLink="/{{invoiceItem.id}}" mat-list-item>
+    <div>
+        <span>{{invoiceItem.id}}</span>
+        <span style="margin-left: 2rem;">{{invoiceItem.sentToEmail}}</span>
+        <div (click)="$event.stopPropagation()">
+            <mat-icon style="margin-left: auto;" (click)="deleteItem($event)">delete</mat-icon>
+        </div>
+    </div>
+</a>

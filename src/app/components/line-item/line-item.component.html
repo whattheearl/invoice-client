@@ -1,0 +1,20 @@
+<mat-list-item *ngIf="selected != lineItem.id" style="border: 1px solid black;">
+    <div style="margin-right: 20px; width: 30em;">description: {{lineItem.description}}</div>
+    <div >minutes: {{lineItem.minutes}}</div>
+</mat-list-item>
+<mat-list-item *ngIf="selected == lineItem.id">
+    <mat-form-field style="margin-right: 20px; width: 30em;">
+        <input matInput type="text"
+                placeholder="description" 
+                [(ngModel)]="lineItem.description"
+                (keydown.enter)="updateItem()"/>
+    </mat-form-field>
+    <mat-form-field>
+        <!-- todo: hook up on enter to save to db and set up two way data binding-->
+        <input matInput type="text" 
+                placeholder="minutes" 
+                [(ngModel)]="lineItem.minutes"
+                (keydown.enter)="updateItem()"/>
+    </mat-form-field>
+    <mat-icon style="margin-left: auto;" (click)="deleteItem()">delete</mat-icon>
+</mat-list-item>

@@ -1,0 +1,19 @@
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened>
+        <mat-nav-list>
+            <a mat-list-item [routerLink]="['/Invoices']" [routerLinkActive]="['is-active']">
+                <button mat-icon-button>
+                    <mat-icon>receipt</mat-icon>Invoices
+                </button>
+            </a>
+            <a mat-list-item [routerLink]="['/Clients']" [routerLinkActive]="['is-active']">
+                <button mat-icon-button>
+                    <mat-icon>people</mat-icon>Clients
+                </button>
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

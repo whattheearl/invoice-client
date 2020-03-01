@@ -1,0 +1,25 @@
+mat-sidenav {
+    width: 250px;
+}
+
+mat-sidenav-content {
+    max-width: 900px;
+    padding: 24px; 
+}
+
+mat-sidenav-container {
+    height: 100%;
+}
+
+button {
+    display: flex;
+    align-content: center;
+}
+
+mat-icon {
+    margin-right: 16px;
+}
+
+.is-active {
+    color: red;
+}
